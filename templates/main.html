@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Sunflower </title>
+        <link rel="shortcut icon" type="image/x-icon" href="/imgs/sunflower_icon.png" />
+    </head>
+    <body>
+
+        {% if admin %}
+        <h1> Account type: Admin</h1>
+        {% else %}
+        <h1> Account type: User</h1>
+        {% endif%}
+
+
+        <h1> Email address: {{user}}</h1>
+        <a1> Hey, this is Darren. Thanks for trying out this prototype. Here are some information on this website:</a1>
+        <p></p>
+        <a1>This website is build on Python, Flask, Django, HTML/CSS, and MySQL. Later it will incorporate jQuery, ajax, php, and javascript to make some pretty sick stuff.</a1>
+        <p></p>
+        <a1>The validate_email API is used to see if your email is valid.</a1>
+        <p></p>
+        <a1>Passwords entered cannot be seen even if I go into MySQL database. All passwords are hashed using SHA224 hash algorithm.</a1>
+        <p></p>
+        <a1>This website will be improved after i get into college :))</a1>
+        <p></p>
+        <img src="/imgs/squidwarddab.png" alt="Squidward Dab">
+
+    </body>
+</html>
