@@ -22,7 +22,7 @@ def login_page():
     if request.method == 'POST':
 
         #Stores input email address into String
-        inp_usrn = request.form['email address']
+        inp_usrn = request.form['email address'].lower()
 
         #Comparing email addresses
         if db_has(inp_usrn):
@@ -50,7 +50,7 @@ def sign_up():
     if request.method == 'POST':
         
         #Get password from the forms in createaccount.html using Flask request
-        create_usr = request.form['email address']
+        create_usr = request.form['email address'].lower()
         create_pswd = request.form['password']
         
         #Creating account and checking if email address is valid and has a SMTP Server
