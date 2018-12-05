@@ -6,17 +6,19 @@ import hashlib
 
 app = Flask(__name__)
 
-#Conenct into MySQL database
-cnx = MySQLdb.connect(host = "localhost",
-                          user = "root",
-                          passwd = "",
-                          db = "XXXX")
-                          
-#Crusor item to initiate text into MySQL
-cur = cnx.cursor()
+#Initialize MySQL connection information
+config = {
+    'host' : "localhost",
+    'user' : "root",
+    'passwd' : "",
+    'db' : "XXXX"
+}
 
 @app.route('/', methods=['GET','POST'])
 def login_page():
+  
+    cnx = MySQLdb.connect(**config)
+    cur = cnx.cursor()
 
     #Comparing input and items in MySQL
     if request.method == 'POST':
@@ -35,6 +37,7 @@ def login_page():
 
             #Extract the password from MySQL
             cur.execute("SELECT pswd FROM users WHERE email = '%s'" %(inp_usrn))
+            cnx.close()
             get_pswd = ""
             for row in cur:
                 get_pswd += row[0]
@@ -46,7 +49,10 @@ def login_page():
 
 @app.route('/signup',methods=['GET','POST'])
 def sign_up():
-
+    
+    cnx = MySQLdb.connect(**config)
+    cur = cnx.cursor()
+    
     if request.method == 'POST':
         
         #Get password from the forms in createaccount.html using Flask request
@@ -57,6 +63,7 @@ def sign_up():
         if not db_has(create_usr) and validate_email(create_usr,verify=True):
             cur.execute("INSERT INTO `users` (`email`,`pswd`) VALUES ('%s', SHA2('%s',224));" %(create_usr,create_pswd))
             cnx.commit()
+            cnx.close()
             return render_template("createaccount.html", text = "Account Created!")
 
     return render_template("createaccount.html")
