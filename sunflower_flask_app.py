@@ -69,7 +69,7 @@ def sign_up():
     return render_template("createaccount.html")
 
 #Checks if input emailaddress is in the database
-def db_has(ea):
+def db_has(ea.cur):
     #Extracts the username from MySQL (if applicable)
     cur.execute("SELECT email FROM users WHERE email = '%s'" %(ea))
     get_usrn = ""
