@@ -37,13 +37,16 @@ def login_page():
 
             #Extract the password from MySQL
             cur.execute("SELECT pswd FROM users WHERE email = '%s'" %(inp_usrn))
-            cnx.close()
             get_pswd = str(cur.fetchone())[2:-3]
+
             #Hexdigest the has object and compares it to database's password
             if hash_obj == get_pswd:
-                return render_template("main.html", user = inp_usrn, admin = ("example@example.com"==inp_usrn))
-            else:
-                return "Fix this loophole" #There is a loophole for users to see if there is this email in this website.
+                #Extract the account type from MySQL
+                cur.execute("SELECT type FROM users WHERE email = '%s'" %(inp_usrn))
+                cnx.close()
+                get_type = str(cur.fetchone())[2:-3]
+                return render_template("main.html", user = inp_usrn, admin = (get_type == "admin"));
+
     cnx.close()
     return render_template("login.html")
 
