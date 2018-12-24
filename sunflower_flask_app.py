@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 from validate_email import validate_email
 import MySQLdb
 import hashlib
+import smtplib
+from random import randint, choice
+import string
 
 
 app = Flask(__name__)
