@@ -48,7 +48,7 @@ def login_page():
             #Hexdigest the has object and compares it to database's password
             if (hash_obj == get_pswd) or (db_get(inp_usrn,cur,"temp_pwd") == hash_obj):
                 if not db_has(inp_usrn,cur,"temp_pwd",None):
-                    cur.execute("UPDATE users SET temp_pwd = NULL WHERE email = '%s';" %(inp_usrn))
+                    cur.execute("UPDATE users SET temp_pwd = 'NULL' WHERE email = '%s';" %(inp_usrn))
                     cnx.commit()
                     #reset_pwd = True
                 #Extract the account type from MySQL
@@ -70,7 +70,7 @@ def sign_up():
         create_pswd = request.form['password']
 
         if not db_has(create_usr,cur,"email",create_usr) and validate_email(create_usr,verify=True):
-            cur.execute("INSERT INTO `users` (`email`,`pswd`,`type`,`temp_pwd`) VALUES ('%s', SHA2('%s',224), 'user', NULL);" %(create_usr,create_pswd))
+            cur.execute("INSERT INTO `users` (`email`,`pswd`,`type`,`temp_pwd`) VALUES ('%s', SHA2('%s',224), 'user', 'NULL');" %(create_usr,create_pswd))
             cnx.commit()
             cnx.close()
             return render_template("createaccount.html", text = "Account Created!")
@@ -85,7 +85,7 @@ def forgot_login():
         ea = request.form['email address'].lower()
 
         if (db_has(ea,cur,"email",ea)):
-            if not db_has(ea,cur,"temp_pwd",None):
+            if not db_has(ea,cur,"temp_pwd",'NULL'):
                 return render_template("forgotlogin.html",message = "An email was already sent.")
 
             #Connect into gmail server
