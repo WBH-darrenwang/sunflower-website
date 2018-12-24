@@ -17,6 +17,9 @@ config = {
     'db' : "XXXX"
 }
 
+bot_user = "example@gmail.com"
+bot_pwd = "XXXX"
+
 @app.route('/', methods=['GET','POST'])
 def login_page():
 
