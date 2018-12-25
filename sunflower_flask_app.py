@@ -6,15 +6,6 @@ import smtplib
 from random import randint, choice
 import string
 
-'''
-Cookies
-Write an option for admin to make others admin, or demote
-Write different page for users vs admin vs etc.
-When someone's authority is changed, how do make the person know that automatically and make them refresh for updated content?
-jQuery
-Have a previous email variable so you don't need to keep going into the database
-'''
-
 app = Flask(__name__)
 
 #Login information for pythonanywhere MySQL
