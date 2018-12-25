@@ -3,20 +3,22 @@
 <head>
   <title> Sunflower </title>
   <!-- Linking this html to a css code -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='loginstyle.css') }}">
   <link rel="shortcut icon" type="image/x-icon" href="/imgs/sunflower_icon.png" />
 </head>
 <body>
 
-    <h1> Please Log In </h1>
-    <h3> Fake email addresses are detected and all passwords are HASHED--meaning no one can see your password in its raw form.</h3>
-    <pre class="tab">Username:         Password:</pre>
+    <h1> Please Log In</h1>
     <form method="POST">
-        <input type="text" name="email address">
-        <input type="password" name="password">
+        <input type="text" name="email address", placeholder="Email Address">
+        <input type="password" name="password", placeholder="Password">
         <input type="submit">
     </form>
+    {% if invalid_inp %}
+        <h5> Wrong email/password </h5>
+    {% endif %}
     <a href="http://sunflower24.pythonanywhere.com/signup">Create an account</a>
+    <a href="http://sunflower24.pythonanywhere.com/forgot">Forogt password</a>
     <p>
     <img src="/imgs/the-scream.png" alt="The Scream Painting" style="width:300px;height:375px">
 
