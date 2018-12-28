@@ -269,6 +269,6 @@ def random_key():
     pwd =  "".join(choice(char) for x in range(randint(8, 16)))
     return pwd
 
-#Runs the web app on localhost
+#Runs the web app on localhost: http://127.0.0.1:5000/
 if __name__ == "__main__":
     app.run()
