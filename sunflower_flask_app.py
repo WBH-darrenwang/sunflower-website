@@ -268,3 +268,7 @@ def random_key():
     char = string.ascii_letters + string.punctuation  + string.digits
     pwd =  "".join(choice(char) for x in range(randint(8, 16)))
     return pwd
+
+#Runs the web app on localhost
+if __name__ == "__main__":
+    app.run()
