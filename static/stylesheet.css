@@ -4,10 +4,12 @@ body{
 h5{
     color: red;
 }
-#login_box{
-    padding-top: 30px;
+div{
+    top: 30px;
+    vertical-align:middle;
     position: relative;
     text-align: center;
+    overflow: hidden;
 }
 #login_ea_pos{
     position: absolute;
@@ -43,4 +45,14 @@ h5{
     position: absolute;
     top: 195px;
     left: 220px;
+}
+#bacon_back{
+    position: absolute;
+    top: -626px;
+    animation: falling 4s infinite linear;
+}
+
+@keyframes falling {
+  0%   {top:-626px;}
+  100% {top:20px;}
 }
