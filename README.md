@@ -6,4 +6,4 @@ Secured hashing of password using SHA224 hashing algorithm.
 <p></p>
 validate_email API to determine if entered email addresses are valid and have a SMTP Server.
 <p></p>
-(I don't own the pictures.)
+(I don't own all of the pictures.)
