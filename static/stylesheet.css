@@ -4,42 +4,42 @@ body{
 h5{
     color: red;
 }
-.login_box{
+#login_box{
     padding-top: 30px;
     position: relative;
     text-align: center;
 }
-.login_ea_pos{
+#login_ea_pos{
     position: absolute;
     bottom: 332.7px;
     right: 449.51px;
 }
-.login_pwd_pos{
+#login_pwd_pos{
     position: absolute;
     bottom: 292px;
     right: 377.5px;
 }
-.login_sub_pos{
+#login_sub_pos{
     position: absolute;
     bottom: 292px;
     right: 313px;
 }
-.login_create_pos{
+#login_create_pos{
     position: absolute;
     bottom: 270px;
     right: 390px;
 }
-.login_forgot_pos{
+#login_forgot_pos{
     position: absolute;
     bottom: 270px;
     right: 275px;
 }
-.login_message_pos{
+#login_message_pos{
     position: absolute;
     bottom: 313px;
     right: 305px;
 }
-.yolk_pos{
+#yolk_pos{
     position: absolute;
     top: 195px;
     left: 220px;
