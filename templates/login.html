@@ -7,18 +7,18 @@
   <link rel="shortcut icon" type="image/x-icon" href="/imgs/sunflower_icon.png" />
 </head>
 <body>
-    <div class = "login_box" vertical-align:middle;>
+    <div id = "login_box" vertical-align:middle;>
         <form method="POST">
-            <input class = "login_ea_pos" type="text" name="email address", placeholder="Email Address">
-            <input class = "login_pwd_pos" type="password" name="password", placeholder="Password">
-            <input class = "login_sub_pos" type="submit">
+            <input id = "login_ea_pos" type="text" name="email address", placeholder="Email Address">
+            <input id = "login_pwd_pos" type="password" name="password", placeholder="Password">
+            <input id = "login_sub_pos" type="submit">
         </form>
-        <a class = "login_create_pos" href="http://sunflower24.pythonanywhere.com/signup">Create an account</a>
-        <a class = "login_forgot_pos" href="http://sunflower24.pythonanywhere.com/forgot">Forogt password</a>
+        <a id = "login_create_pos" href="http://sunflower24.pythonanywhere.com/signup">Create an account</a>
+        <a id = "login_forgot_pos" href="http://sunflower24.pythonanywhere.com/forgot">Forogt password</a>
         {% if invalid_inp %}
-            <h5 class = "login_message_pos"> Wrong email/password </h5>
+            <h5 id = "login_message_pos"> Wrong email/password </h5>
         {% endif %}
-        <img class = "yolk_pos" src = "/imgs/yolk.png" alt = "Mr.Yolk">
+        <img id = "yolk_pos" src = "/imgs/yolk.png" alt = "Mr.Yolk">
         <img src="/imgs/background.png" alt = "Background" style="width:1100px;height:648px">
     </div>
     <p>
