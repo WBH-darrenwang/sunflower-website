@@ -41,6 +41,9 @@ div{
     bottom: 313px;
     right: 305px;
 }
+#egg_white_pos{
+    position: absolute;
+}
 #yolk_pos{
     position: absolute;
     top: 195px;
@@ -49,7 +52,12 @@ div{
 #bacon_back{
     position: absolute;
     top: -626px;
-    animation: falling 4s infinite linear;
+    animation: falling 6s infinite linear;
+}
+#mini_bacon_back{
+    position: absolute;
+    top: -626px;
+    animation: falling 16s infinite linear;
 }
 
 @keyframes falling {
