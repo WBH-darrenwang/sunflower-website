@@ -2,8 +2,8 @@
 Testing Website <p></p>
 Link: https://sunflower24.pythonanywhere.com
 <p></p>
+<strong> Brief Overview: </strong> Simplified secured login system using MySQL and Flask. 
 Secured hashing of password using SHA224 hashing algorithm.
-<p></p>
 validate_email API to determine if entered email addresses are valid and have a SMTP Server.
 <p></p>
 (I don't own all of the pictures.)
